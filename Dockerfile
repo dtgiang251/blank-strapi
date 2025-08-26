@@ -4,7 +4,8 @@ WORKDIR /opt/app
 
 COPY package.json ./
 COPY yarn.lock ./
-COPY node_modules ./node_modules
+RUN yarn install
+
 COPY . .
 
 RUN yarn build
